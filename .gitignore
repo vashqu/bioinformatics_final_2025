@@ -1,0 +1,48 @@
+# Large sequencing data — do not commit
+*.bam
+*.bai
+*.sam
+*.cram
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+
+# Reference genomes
+*.fa
+*.fa.gz
+*.fai
+*.dict
+
+# VCF files (large pipeline outputs)
+*.vcf
+*.vcf.gz
+*.vcf.gz.tbi
+*.g.vcf.gz
+*.g.vcf.gz.tbi
+
+# VQSR intermediate files
+*.recal
+*.tranches
+*.R
+
+# GenomicsDB workspace
+genomicsdb/
+
+# Pipeline data directories
+data/
+reference/
+output/
+
+# Archives
+*.zip
+*.tar.gz
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store

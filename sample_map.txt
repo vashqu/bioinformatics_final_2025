@@ -1,0 +1,15 @@
+HG00149	/mnt/hdd_b/home/user02/output/HG00149.chrom11.ILLUMINA.bwa.GBR.exome.20130415/HG00149.chrom11.ILLUMINA.bwa.GBR.exome.20130415.g.vcf.gz
+HG00150	/mnt/hdd_b/home/user02/output/HG00150.chrom11.ILLUMINA.bwa.GBR.exome.20130415/HG00150.chrom11.ILLUMINA.bwa.GBR.exome.20130415.g.vcf.gz
+HG00151	/mnt/hdd_b/home/user02/output/HG00151.chrom11.ILLUMINA.bwa.GBR.exome.20130415/HG00151.chrom11.ILLUMINA.bwa.GBR.exome.20130415.g.vcf.gz
+HG00154	/mnt/hdd_b/home/user02/output/HG00154.chrom11.ILLUMINA.bwa.GBR.exome.20120522/HG00154.chrom11.ILLUMINA.bwa.GBR.exome.20120522.g.vcf.gz
+HG00155	/mnt/hdd_b/home/user02/output/HG00155.chrom11.ILLUMINA.bwa.GBR.exome.20121211/HG00155.chrom11.ILLUMINA.bwa.GBR.exome.20121211.g.vcf.gz
+HG00157	/mnt/hdd_b/home/user02/output/HG00157.chrom11.ILLUMINA.bwa.GBR.exome.20120522/HG00157.chrom11.ILLUMINA.bwa.GBR.exome.20120522.g.vcf.gz
+HG00158	/mnt/hdd_b/home/user02/output/HG00158.chrom11.ILLUMINA.bwa.GBR.exome.20120522/HG00158.chrom11.ILLUMINA.bwa.GBR.exome.20120522.g.vcf.gz
+HG00159	/mnt/hdd_b/home/user02/output/HG00159.chrom11.ILLUMINA.bwa.GBR.exome.20120522/HG00159.chrom11.ILLUMINA.bwa.GBR.exome.20120522.g.vcf.gz
+HG00160	/mnt/hdd_b/home/user02/output/HG00160.chrom11.ILLUMINA.bwa.GBR.exome.20120522/HG00160.chrom11.ILLUMINA.bwa.GBR.exome.20120522.g.vcf.gz
+HG00171	/mnt/hdd_b/home/user02/output/HG00171.chrom11.ILLUMINA.bwa.FIN.exome.20120522/HG00171.chrom11.ILLUMINA.bwa.FIN.exome.20120522.g.vcf.gz
+HG00173	/mnt/hdd_b/home/user02/output/HG00173.chrom11.ILLUMINA.bwa.FIN.exome.20130415/HG00173.chrom11.ILLUMINA.bwa.FIN.exome.20130415.g.vcf.gz
+HG00174	/mnt/hdd_b/home/user02/output/HG00174.chrom11.ILLUMINA.bwa.FIN.exome.20120522/HG00174.chrom11.ILLUMINA.bwa.FIN.exome.20120522.g.vcf.gz
+HG00176	/mnt/hdd_b/home/user02/output/HG00176.chrom11.ILLUMINA.bwa.FIN.exome.20120522/HG00176.chrom11.ILLUMINA.bwa.FIN.exome.20120522.g.vcf.gz
+HG00177	/mnt/hdd_b/home/user02/output/HG00177.chrom11.ILLUMINA.bwa.FIN.exome.20130415/HG00177.chrom11.ILLUMINA.bwa.FIN.exome.20130415.g.vcf.gz
+HG00178	/mnt/hdd_b/home/user02/output/HG00178.chrom11.ILLUMINA.bwa.FIN.exome.20121211/HG00178.chrom11.ILLUMINA.bwa.FIN.exome.20121211.g.vcf.gz

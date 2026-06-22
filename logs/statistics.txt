@@ -1,0 +1,436 @@
+Script started on 2025-01-28 00:14:47+02:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="80" LINES="24"]
+[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ [7mbcftools stats /mnt/hdd_b/home/us[27m[7me[27m[7mr02/output/chr11_joint.vcf.gz > raw_stats.txt[27m[A]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ bcftools stats /mnt/hdd_b/home/user02/output/chr11_joint.vcf.gz > raw_stats.txt
+[?2004l[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ [7mbcftools stats /mnt/hdd_b/home/us[27m[7me[27m[7mr02/output/chr11_joint_filtered.vcf.gz > filtered_stats.txt[27m[Abcftools stats /mnt/hdd_b/home/user02/output/chr11_joint_filtered.vcf.gz > filtered_stats.txt
+[?2004l[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ [7mgrep "^SN" raw_stats.txt[27mgrep "^SN" raw_stats.txt
+[?2004l[01;31m[KSN[m[K	0	number of samples:	15
+[01;31m[KSN[m[K	0	number of records:	73805
+[01;31m[KSN[m[K	0	number of no-ALTs:	0
+[01;31m[KSN[m[K	0	number of SNPs:	68528
+[01;31m[KSN[m[K	0	number of MNPs:	0
+[01;31m[KSN[m[K	0	number of indels:	5279
+[01;31m[KSN[m[K	0	number of others:	0
+[01;31m[KSN[m[K	0	number of multiallelic sites:	64
+[01;31m[KSN[m[K	0	number of multiallelic SNP sites:	15
+[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ [7mgrep "^SN" filtered_stats.txt[27mgrep "^SN" filtered_stats.txt
+[?2004l[01;31m[KSN[m[K	0	number of samples:	15
+[01;31m[KSN[m[K	0	number of records:	73805
+[01;31m[KSN[m[K	0	number of no-ALTs:	0
+[01;31m[KSN[m[K	0	number of SNPs:	68528
+[01;31m[KSN[m[K	0	number of MNPs:	0
+[01;31m[KSN[m[K	0	number of indels:	5279
+[01;31m[KSN[m[K	0	number of others:	0
+[01;31m[KSN[m[K	0	number of multiallelic sites:	64
+[01;31m[KSN[m[K	0	number of multiallelic SNP sites:	15
+[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ [7mgatk ApplyVQSR \[27m
+[7m    -R /mnt/hdd_b/home/user02/reference/hg38/hg38.fa \[27m
+[7m    -V /mnt/hdd_b/home/user02/output/chr11_joint.vcf.gz \[27m
+[7m    -O /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict_SNPs.vcf.gz \[27m
+[7m    --recal-file /mnt/hdd_b/home/user02/output/recalibrate_SNP.recal \[27m
+[7m    --tranches-file /mnt/hdd_b/home/user02/output/recalibrate_SNP.tranches \[27m
+[7m    -mode SNP \[27m
+[7m    --truth-sensitivity-filter-level 99.0[27m
+[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgatk ApplyVQSR \
+    -R /mnt/hdd_b/home/user02/reference/hg38/hg38.fa \
+    -V /mnt/hdd_b/home/user02/output/chr11_joint.vcf.gz \
+    -O /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict_SNPs.vcf.gz \
+    --recal-file /mnt/hdd_b/home/user02/output/recalibrate_SNP.recal \
+    --tranches-file /mnt/hdd_b/home/user02/output/recalibrate_SNP.tranches \
+    -mode SNP \
+    --truth-sensitivity-filter-level 99.0
+[A
+[?2004lUsing GATK jar /mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar
+Running:
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -jar /mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar ApplyVQSR -R /mnt/hdd_b/home/user02/reference/hg38/hg38.fa -V /mnt/hdd_b/home/user02/output/chr11_joint.vcf.gz -O /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict_SNPs.vcf.gz --recal-file /mnt/hdd_b/home/user02/output/recalibrate_SNP.recal --tranches-file /mnt/hdd_b/home/user02/output/recalibrate_SNP.tranches -mode SNP --truth-sensitivity-filter-level 99.0
+00:20:51.079 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar!/com/intel/gkl/native/libgkl_compression.so
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@6e95973c]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@404ced67]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [org.apache.logging.slf4j.SLF4JServiceProvider@6e95973c]
+00:20:51.346 INFO  ApplyVQSR - ------------------------------------------------------------
+00:20:51.351 INFO  ApplyVQSR - The Genome Analysis Toolkit (GATK) v4.6.1.0
+00:20:51.351 INFO  ApplyVQSR - For support and documentation go to https://software.broadinstitute.org/gatk/
+00:20:51.351 INFO  ApplyVQSR - Executing as user02@UoA-Intro2Bio24 on Linux v6.8.0-49-generic amd64
+00:20:51.351 INFO  ApplyVQSR - Java runtime: OpenJDK 64-Bit Server VM v21.0.5+11-Ubuntu-1ubuntu124.04
+00:20:51.352 INFO  ApplyVQSR - Start Date/Time: January 28, 2025, 12:20:50 AM EET
+00:20:51.352 INFO  ApplyVQSR - ------------------------------------------------------------
+00:20:51.352 INFO  ApplyVQSR - ------------------------------------------------------------
+00:20:51.353 INFO  ApplyVQSR - HTSJDK Version: 4.1.3
+00:20:51.353 INFO  ApplyVQSR - Picard Version: 3.3.0
+00:20:51.353 INFO  ApplyVQSR - Built for Spark Version: 3.5.0
+00:20:51.357 INFO  ApplyVQSR - HTSJDK Defaults.COMPRESSION_LEVEL : 2
+00:20:51.357 INFO  ApplyVQSR - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
+00:20:51.357 INFO  ApplyVQSR - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
+00:20:51.357 INFO  ApplyVQSR - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
+00:20:51.357 INFO  ApplyVQSR - Deflater: IntelDeflater
+00:20:51.358 INFO  ApplyVQSR - Inflater: IntelInflater
+00:20:51.358 INFO  ApplyVQSR - GCS max retries/reopens: 20
+00:20:51.358 INFO  ApplyVQSR - Requester pays: disabled
+00:20:51.359 INFO  ApplyVQSR - Initializing engine
+00:20:51.641 INFO  FeatureManager - Using codec VCFCodec to read file file:///mnt/hdd_b/home/user02/output/recalibrate_SNP.recal
+00:20:51.731 INFO  FeatureManager - Using codec VCFCodec to read file file:///mnt/hdd_b/home/user02/output/chr11_joint.vcf.gz
+00:20:51.790 INFO  ApplyVQSR - Done initializing engine
+00:20:51.804 INFO  ApplyVQSR - Read tranche TruthSensitivityTranche targetTruthSensitivity=90.00 minVQSLod=5.9167 known=(0 @ 0.0000) novel=(33205 @ 2.0531) truthSites(30143 accessible, 27128 called), name=VQSRTrancheSNP0.00to90.00]
+00:20:51.805 INFO  ApplyVQSR - Read tranche TruthSensitivityTranche targetTruthSensitivity=99.00 minVQSLod=0.3809 known=(0 @ 0.0000) novel=(64740 @ 1.7194) truthSites(30143 accessible, 29841 called), name=VQSRTrancheSNP90.00to99.00]
+00:20:51.805 INFO  ApplyVQSR - Read tranche TruthSensitivityTranche targetTruthSensitivity=99.90 minVQSLod=-10.9030 known=(0 @ 0.0000) novel=(68335 @ 1.7174) truthSites(30143 accessible, 30112 called), name=VQSRTrancheSNP99.00to99.90]
+00:20:51.806 INFO  ApplyVQSR - Read tranche TruthSensitivityTranche targetTruthSensitivity=100.00 minVQSLod=-3558550.1320 known=(0 @ 0.0000) novel=(68526 @ 1.7172) truthSites(30143 accessible, 30143 called), name=VQSRTrancheSNP99.90to100.00]
+00:20:51.834 INFO  ApplyVQSR - Keeping all variants in tranche TruthSensitivityTranche targetTruthSensitivity=99.00 minVQSLod=0.3809 known=(0 @ 0.0000) novel=(64740 @ 1.7194) truthSites(30143 accessible, 29841 called), name=VQSRTrancheSNP90.00to99.00]
+00:20:51.851 INFO  ProgressMeter - Starting traversal
+00:20:51.852 INFO  ProgressMeter -        Current Locus  Elapsed Minutes    Variants Processed  Variants/Minute
+00:20:55.288 INFO  ProgressMeter -      chr11:133635687              0.1                 73805        1289921.4
+00:20:55.289 INFO  ProgressMeter - Traversal complete. Processed 73805 total variants in 0.1 minutes.
+00:20:55.313 INFO  ApplyVQSR - Shutting down engine
+[January 28, 2025, 12:20:55 AM EET] org.broadinstitute.hellbender.tools.walkers.vqsr.ApplyVQSR done. Elapsed time: 0.07 minutes.
+Runtime.totalMemory()=595591168
+[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ [7mgatk ApplyVQSR \[27m
+[7m    -R /mnt/hdd_b/home/user02/reference/hg38/hg38.fa \[27m
+[7m    -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict_SNPs.vcf.gz \[27m
+[7m    -O /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz \[27m
+[7m    --recal-file /mnt/hdd_b/home/user02/output/recalibrate_INDEL.recal \[27m
+[7m    --tranches-file /mnt/hdd_b/home/user02/output/recalibrate_INDEL.tranches \[27m
+[7m    -mode INDEL \[27m
+[7m    --truth-sensitivity-filter-level 95.0[27m
+[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgatk ApplyVQSR \
+    -R /mnt/hdd_b/home/user02/reference/hg38/hg38.fa \
+    -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict_SNPs.vcf.gz \
+    -O /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz \
+    --recal-file /mnt/hdd_b/home/user02/output/recalibrate_INDEL.recal \
+    --tranches-file /mnt/hdd_b/home/user02/output/recalibrate_INDEL.tranches \
+    -mode INDEL \
+    --truth-sensitivity-filter-level 95.0
+[A
+[?2004lUsing GATK jar /mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar
+Running:
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -jar /mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar ApplyVQSR -R /mnt/hdd_b/home/user02/reference/hg38/hg38.fa -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict_SNPs.vcf.gz -O /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz --recal-file /mnt/hdd_b/home/user02/output/recalibrate_INDEL.recal --tranches-file /mnt/hdd_b/home/user02/output/recalibrate_INDEL.tranches -mode INDEL --truth-sensitivity-filter-level 95.0
+00:21:21.715 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar!/com/intel/gkl/native/libgkl_compression.so
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@6e95973c]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@404ced67]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [org.apache.logging.slf4j.SLF4JServiceProvider@6e95973c]
+00:21:21.897 INFO  ApplyVQSR - ------------------------------------------------------------
+00:21:21.900 INFO  ApplyVQSR - The Genome Analysis Toolkit (GATK) v4.6.1.0
+00:21:21.900 INFO  ApplyVQSR - For support and documentation go to https://software.broadinstitute.org/gatk/
+00:21:21.901 INFO  ApplyVQSR - Executing as user02@UoA-Intro2Bio24 on Linux v6.8.0-49-generic amd64
+00:21:21.901 INFO  ApplyVQSR - Java runtime: OpenJDK 64-Bit Server VM v21.0.5+11-Ubuntu-1ubuntu124.04
+00:21:21.901 INFO  ApplyVQSR - Start Date/Time: January 28, 2025, 12:21:21 AM EET
+00:21:21.901 INFO  ApplyVQSR - ------------------------------------------------------------
+00:21:21.902 INFO  ApplyVQSR - ------------------------------------------------------------
+00:21:21.903 INFO  ApplyVQSR - HTSJDK Version: 4.1.3
+00:21:21.903 INFO  ApplyVQSR - Picard Version: 3.3.0
+00:21:21.903 INFO  ApplyVQSR - Built for Spark Version: 3.5.0
+00:21:21.908 INFO  ApplyVQSR - HTSJDK Defaults.COMPRESSION_LEVEL : 2
+00:21:21.908 INFO  ApplyVQSR - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
+00:21:21.908 INFO  ApplyVQSR - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
+00:21:21.908 INFO  ApplyVQSR - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
+00:21:21.909 INFO  ApplyVQSR - Deflater: IntelDeflater
+00:21:21.909 INFO  ApplyVQSR - Inflater: IntelInflater
+00:21:21.909 INFO  ApplyVQSR - GCS max retries/reopens: 20
+00:21:21.909 INFO  ApplyVQSR - Requester pays: disabled
+00:21:21.910 INFO  ApplyVQSR - Initializing engine
+00:21:22.189 INFO  FeatureManager - Using codec VCFCodec to read file file:///mnt/hdd_b/home/user02/output/recalibrate_INDEL.recal
+00:21:22.253 INFO  FeatureManager - Using codec VCFCodec to read file file:///mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict_SNPs.vcf.gz
+00:21:22.317 INFO  ApplyVQSR - Done initializing engine
+00:21:22.332 INFO  ApplyVQSR - Read tranche TruthSensitivityTranche targetTruthSensitivity=90.00 minVQSLod=2.6399 known=(0 @ 0.0000) novel=(4228 @ 0.0000) truthSites(2938 accessible, 2644 called), name=VQSRTrancheINDEL0.00to90.00]
+00:21:22.333 INFO  ApplyVQSR - Read tranche TruthSensitivityTranche targetTruthSensitivity=99.00 minVQSLod=0.9382 known=(0 @ 0.0000) novel=(4985 @ 0.0000) truthSites(2938 accessible, 2908 called), name=VQSRTrancheINDEL90.00to99.00]
+00:21:22.333 INFO  ApplyVQSR - Read tranche TruthSensitivityTranche targetTruthSensitivity=99.90 minVQSLod=-0.9382 known=(0 @ 0.0000) novel=(5232 @ 0.0000) truthSites(2938 accessible, 2935 called), name=VQSRTrancheINDEL99.00to99.90]
+00:21:22.334 INFO  ApplyVQSR - Read tranche TruthSensitivityTranche targetTruthSensitivity=100.00 minVQSLod=-45313.0848 known=(0 @ 0.0000) novel=(5279 @ 0.0000) truthSites(2938 accessible, 2938 called), name=VQSRTrancheINDEL99.90to100.00]
+00:21:22.374 INFO  ApplyVQSR - Keeping all variants in tranche TruthSensitivityTranche targetTruthSensitivity=99.00 minVQSLod=0.9382 known=(0 @ 0.0000) novel=(4985 @ 0.0000) truthSites(2938 accessible, 2908 called), name=VQSRTrancheINDEL90.00to99.00]
+00:21:22.392 INFO  ProgressMeter - Starting traversal
+00:21:22.393 INFO  ProgressMeter -        Current Locus  Elapsed Minutes    Variants Processed  Variants/Minute
+00:21:24.617 INFO  ProgressMeter -      chr11:133635687              0.0                 73805        2009210.5
+00:21:24.617 INFO  ProgressMeter - Traversal complete. Processed 73805 total variants in 0.0 minutes.
+00:21:24.636 INFO  ApplyVQSR - Shutting down engine
+[January 28, 2025, 12:21:24 AM EET] org.broadinstitute.hellbender.tools.walkers.vqsr.ApplyVQSR done. Elapsed time: 0.05 minutes.
+Runtime.totalMemory()=390070272
+[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ [7mgatk ValidateVariants \[27m
+[7m    -R /mnt/hdd_b/home/user02/reference/hg38/hg38.fa \[27m
+[7m    -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz[27m
+[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgatk ValidateVariants \
+    -R /mnt/hdd_b/home/user02/reference/hg38/hg38.fa \
+    -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz
+[A
+[?2004lUsing GATK jar /mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar
+Running:
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -jar /mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar ValidateVariants -R /mnt/hdd_b/home/user02/reference/hg38/hg38.fa -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz
+00:21:43.785 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar!/com/intel/gkl/native/libgkl_compression.so
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@46bb0bdf]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@561f9d92]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [org.apache.logging.slf4j.SLF4JServiceProvider@46bb0bdf]
+00:21:43.946 INFO  ValidateVariants - ------------------------------------------------------------
+00:21:43.949 INFO  ValidateVariants - The Genome Analysis Toolkit (GATK) v4.6.1.0
+00:21:43.949 INFO  ValidateVariants - For support and documentation go to https://software.broadinstitute.org/gatk/
+00:21:43.950 INFO  ValidateVariants - Executing as user02@UoA-Intro2Bio24 on Linux v6.8.0-49-generic amd64
+00:21:43.950 INFO  ValidateVariants - Java runtime: OpenJDK 64-Bit Server VM v21.0.5+11-Ubuntu-1ubuntu124.04
+00:21:43.950 INFO  ValidateVariants - Start Date/Time: January 28, 2025, 12:21:43 AM EET
+00:21:43.950 INFO  ValidateVariants - ------------------------------------------------------------
+00:21:43.950 INFO  ValidateVariants - ------------------------------------------------------------
+00:21:43.951 INFO  ValidateVariants - HTSJDK Version: 4.1.3
+00:21:43.952 INFO  ValidateVariants - Picard Version: 3.3.0
+00:21:43.952 INFO  ValidateVariants - Built for Spark Version: 3.5.0
+00:21:43.955 INFO  ValidateVariants - HTSJDK Defaults.COMPRESSION_LEVEL : 2
+00:21:43.956 INFO  ValidateVariants - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
+00:21:43.956 INFO  ValidateVariants - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
+00:21:43.956 INFO  ValidateVariants - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
+00:21:43.956 INFO  ValidateVariants - Deflater: IntelDeflater
+00:21:43.956 INFO  ValidateVariants - Inflater: IntelInflater
+00:21:43.957 INFO  ValidateVariants - GCS max retries/reopens: 20
+00:21:43.957 INFO  ValidateVariants - Requester pays: disabled
+00:21:43.957 INFO  ValidateVariants - Initializing engine
+00:21:44.210 INFO  FeatureManager - Using codec VCFCodec to read file file:///mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz
+00:21:44.271 INFO  ValidateVariants - Done initializing engine
+00:21:44.272 WARN  ValidateVariants - IDS validation cannot be done because no DBSNP file was provided
+00:21:44.272 WARN  ValidateVariants - Other possible validations will still be performed
+00:21:44.294 INFO  ProgressMeter - Starting traversal
+00:21:44.295 INFO  ProgressMeter -        Current Locus  Elapsed Minutes    Variants Processed  Variants/Minute
+00:21:47.612 INFO  ProgressMeter -      chr11:133635687              0.1                 73805        1337047.1
+00:21:47.612 INFO  ProgressMeter - Traversal complete. Processed 73805 total variants in 0.1 minutes.
+00:21:47.613 INFO  ValidateVariants - Shutting down engine
+[January 28, 2025, 12:21:47 AM EET] org.broadinstitute.hellbender.tools.walkers.variantutils.ValidateVariants done. Elapsed time: 0.07 minutes.
+Runtime.totalMemory()=406847488
+[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ [7mbcftools stats /mnt/hdd_b/home/us[27m[7me[27m[7mr02/output/chr11_joint_filtered_strict.vcf.gz > filtered_strict_stats.txt [27m
+[7mgrep "^SN" filtered_strict_stats.txt[27m
+[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbcftools stats /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz > filtered_strict_stats.txt
+grep "^SN" filtered_strict_stats.txt
+[A
+[?2004l[01;31m[KSN[m[K	0	number of samples:	15
+[01;31m[KSN[m[K	0	number of records:	73805
+[01;31m[KSN[m[K	0	number of no-ALTs:	0
+[01;31m[KSN[m[K	0	number of SNPs:	68528
+[01;31m[KSN[m[K	0	number of MNPs:	0
+[01;31m[KSN[m[K	0	number of indels:	5279
+[01;31m[KSN[m[K	0	number of others:	0
+[01;31m[KSN[m[K	0	number of multiallelic sites:	64
+[01;31m[KSN[m[K	0	number of multiallelic SNP sites:	15
+[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ ser02@UoA-Intro2Bio24:/mnt/hdd_b/home/user02$ gatk ApplyVQSR \ 
+    -R /mnt/hdd_b/home/user02/reference/hg38/hg38.fa \
+    -V /mnt/hdd_b/home/user02/output/chr11_joint.vcf.gz \
+    -O /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict_SNPs.vcf.gz \
+    --recal-file /mnt/hdd_b/home/user02/output/recalibrate_SNP.recal \
+    --tranches-file /mnt/hdd_b/home/user02/output/recalibrate_SNP.tranches \
+    -mode SNP \
+    --truth-sensitivity-filter-level 99.0
+Using GATK jar /mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar 
+Running:
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -jar /mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar ApplyVQSR -R /mnt/hdd_b/home/user02/reference/hg38/hg38.fa -V /mnt/hdd_b/home/user02/output/chr11_joint.vcf.gz -O /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict_SNPs.vcf.gz --recal-file /mnt/hdd_b/home/user02/output/recalibrate_SNP.recal --tranches-file /mnt/hdd_b/home/user02/output/recalibrate_SNP.tranches -mode SNP --truth-sensitivity-filter-level 99.0 
+00:20:51.079 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar!/com/intel/gkl/native/libgkl_compression.so 
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@6e95973c] SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@404ced67]SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.SLF4J(I): Actual provider is of type [org.apache.logging.slf4j.SLF4JServiceProvider@6e95973c]00:20:51.346 INFO  ApplyVQSR - ------------------------------------------------------------00:20:51.351 INFO  ApplyVQSR - The Genome Analysis Toolkit (GATK) v4.6.1.000:20:51.351 INFO  ApplyVQSR - For support and documentation go to https://software.broadinstitute.org/gatk/00:20:51.351 INFO  ApplyVQSR - Executing as user02@UoA-Intro2Bio24 on Linux v6.8.0-49-generic amd6400:20:51.351 INFO  ApplyVQSR - Java runtime: OpenJDK 64-Bit Server VM v21.0.5+11-Ubuntu-1ubuntu124.0400:20:51.352 INFO  ApplyVQSR - Start Date/Time: January 28, 2025, 12:20:50 AM EET00:20:51.352 INFO  ApplyVQSR - ------------------------------------------------------------00:20:51.352 INFO  ApplyVQSR - ------------------------------------------------------------00:20:51.353 INFO  ApplyVQSR - HTSJDK Version: 4.1.300:20:51.353 INFO  ApplyVQSR - Picard Version: 3.3.000:20:51.353 INFO  ApplyVQSR - Built for Spark Version: 3.5.000:20:51.357 INFO  ApplyVQSR - HTSJDK Defaults.COMPRESSION_LEVEL : 200:20:51.357 INFO  ApplyVQSR - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false00:20:51.357 INFO  ApplyVQSR - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true00:20:51.357 INFO  ApplyVQSR - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false00:20:51.357 INFO  ApplyVQSR - Deflater: IntelDeflater00:20:51.358 INFO  ApplyVQSR - Inflater: IntelInflater00:20:51.358 INFO  ApplyVQSR - GCS max retries/reopens: 2000:20:51.358 INFO  ApplyVQSR - Requester pays: disabled00:20:51.359 INFO  ApplyVQSR - Initializing engine00:20:51.641 INFO  FeatureManager - Using codec VCFCodec to read file file:///mnt/hdd_b/home/user02/output/recalibrate_SNP.recal00:20:51.731 INFO  FeatureManager - Using codec VCFCodec to read file file:///mnt/hdd_b/home/user02/output/chr11_joint.vcf.gz00:20:51.790 INFO  ApplyVQSR - Done initializing engine00:20:51.804 INFO  ApplyVQSR - Read tranche TruthSensitivityTranche targetTruthSensitivity=90.00 minVQSLod=5.9167 known=(0 @ 0.0000) novel=(33205 @ 2.0531) truthSites(30143 accessible, 27128 called), name=VQSRTrancheSNP0.00to90.00]00:20:51.805 INFO  ApplyVQSR - Read tranche TruthSensitivityTranche targetTruthSensitivity=99.00 minVQSLod=0.3809 known=(0 @ 0.0000) novel=(64740 @ 1.7194) truthSites(30143 accessible, 29841 called), name=VQSRTrancheSNP90.00to99.00]00:20:51.805 INFO  ApplyVQSR - Read tranche TruthSensitivityTranche targetTruthSensitivity=99.90 minVQSLod=-10.9030 known=(0 @ 0.0000) novel=(68335 @ 1.7174) truthSites(30143 accessible, 30112 called), name=VQSRTrancheSNP99.00to99.90]00:20:51.806 INFO  ApplyVQSR - Read tranche TruthSensitivityTranche targetTruthSensitivity=100.00 minVQSLod=-3558550.1320 known=(0 @ 0.0000) novel=(68526 @ 1.7172) truthSites(30143 accessible, 30143 called), name=VQSRTrancheSNP99.90to100.00]00:20:51.834 INFO  ApplyVQSR - Keeping all variants in tranche TruthSensitivityTranche targetTruthSensitivity=99.00 minVQSLod=0.3809 known=(0 @ 0.0000) novel=(64740 @ 1.7194) truthSites(30143 accessible, 29841 called), name=VQSRTrancheSNP90.00to99.00]00:20:51.851 INFO  ProgressMeter - Starting traversal00:20:51.852 INFO  ProgressMeter -        Current Locus  Elapsed Minutes    Variants Processed  Variants/Minute00:20:55.288 INFO  ProgressMeter -      chr11:133635687              0.1                 73805        1289921.400:20:55.289 INFO  ProgressMeter - Traversal complete. Processed 73805 total variants in 0.1 minutes.00:20:55.313 INFO  ApplyVQSR - Shutting down engine[January 28, 2025, 12:20:55 AM EET] org.broadinstitute.hellbender.tools.walkers.vqsr.ApplyVQSR done. Elapsed time: 0.07 minutes.Runtime.totalMemory()=595591168user02@UoA-Intro2Bio24:/mnt/hdd_b/home/user02$ gatk ApplyVQSR \    -R /mnt/hdd_b/home/user02/reference/hg38/hg38.fa \    -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict_SNPs.vcf.gz \    -O /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz \    --recal-file /mnt/hdd_b/home/user02/output/recalibrate_INDEL.recal \    --tranches-file /mnt/hdd_b/home/user02/output/recalibrate_INDEL.tranches \    -mode INDEL \    --truth-sensitivity-filter-level 95.0Using GATK jar /mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jarRunning:    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -jar /mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar ApplyVQSR -R /mnt/hdd_b/home/user02/reference/hg38/hg38.fa -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict_SNPs.vcf.gz -O /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz --recal-file /mnt/hdd_b/home/user02/output/recalibrate_INDEL.recal --tranches-file /mnt/hdd_b/home/user02/output/recalibrate_INDEL.tranches -mode INDEL --truth-sensitivity-filter-level 95.000:21:21.715 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar!/com/intel/gkl/native/libgkl_compression.soSLF4J(W): Class path contains multiple SLF4J providers.SLF4J(W): Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@6e95973c]SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@404ced67]SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.SLF4J(I): Actual provider is of type [org.apache.logging.slf4j.SLF4JServiceProvider@6e95973c]00:21:21.897 INFO  ApplyVQSR - ------------------------------------------------------------00:21:21.900 INFO  ApplyVQSR - The Genome Analysis Toolkit (GATK) v4.6.1.000:21:21.900 INFO  ApplyVQSR - For support and documentation go to https://software.broadinstitute.org/gatk/00:21:21.901 INFO  ApplyVQSR - Executing as user02@UoA-Intro2Bio24 on Linux v6.8.0-49-generic amd6400:21:21.901 INFO  ApplyVQSR - Java runtime: OpenJDK 64-Bit Server VM v21.0.5+11-Ubuntu-1ubuntu124.0400:21:21.901 INFO  ApplyVQSR - Start Date/Time: January 28, 2025, 12:21:21 AM EET00:21:21.901 INFO  ApplyVQSR - ------------------------------------------------------------00:21:21.902 INFO  ApplyVQSR - ------------------------------------------------------------00:21:21.903 INFO  ApplyVQSR - HTSJDK Version: 4.1.300:21:21.903 INFO  ApplyVQSR - Picard Version: 3.3.000:21:21.903 INFO  ApplyVQSR - Built for Spark Version: 3.5.000:21:21.908 INFO  ApplyVQSR - HTSJDK Defaults.COMPRESSION_LEVEL : 200:21:21.908 INFO  ApplyVQSR - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false00:21:21.908 INFO  ApplyVQSR - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true00:21:21.908 INFO  ApplyVQSR - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false00:21:21.909 INFO  ApplyVQSR - Deflater: IntelDeflater00:21:21.909 INFO  ApplyVQSR - Inflater: IntelInflater00:21:21.909 INFO  ApplyVQSR - GCS max retries/reopens: 2000:21:21.909 INFO  ApplyVQSR - Requester pays: disabled00:21:21.910 INFO  ApplyVQSR - Initializing engine00:21:22.189 INFO  FeatureManager - Using codec VCFCodec to read file file:///mnt/hdd_b/home/user02/output/recalibrate_INDEL.recal00:21:22.253 INFO  FeatureManager - Using codec VCFCodec to read file file:///mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict_SNPs.vcf.gz00:21:22.317 INFO  ApplyVQSR - Done initializing engine00:21:22.332 INFO  ApplyVQSR - Read tranche TruthSensitivityTranche targetTruthSensitivity=90.00 minVQSLod=2.6399 known=(0 @ 0.0000) novel=(4228 @ 0.0000) truthSites(2938 accessible, 2644 called), name=VQSRTrancheINDEL0.00to90.00]00:21:22.333 INFO  ApplyVQSR - Read tranche TruthSensitivityTranche targetTruthSensitivity=99.00 minVQSLod=0.9382 known=(0 @ 0.0000) novel=(4985 @ 0.0000) truthSites(2938 accessible, 2908 called), name=VQSRTrancheINDEL90.00to99.00]00:21:22.333 INFO  ApplyVQSR - Read tranche TruthSensitivityTranche targetTruthSensitivity=99.90 minVQSLod=-0.9382 known=(0 @ 0.0000) novel=(5232 @ 0.0000) truthSites(2938 accessible, 2935 called), name=VQSRTrancheINDEL99.00to99.90]00:21:22.334 INFO  ApplyVQSR - Read tranche TruthSensitivityTranche targetTruthSensitivity=100.00 minVQSLod=-45313.0848 known=(0 @ 0.0000) novel=(5279 @ 0.0000) truthSites(2938 accessible, 2938 called), name=VQSRTrancheINDEL99.90to100.00]00:21:22.374 INFO  ApplyVQSR - Keeping all variants in tranche TruthSensitivityTranche targetTruthSensitivity=99.00 minVQSLod=0.9382 known=(0 @ 0.0000) novel=(4985 @ 0.0000) truthSites(2938 accessible, 2908 called), name=VQSRTrancheINDEL90.00to99.00]00:21:22.392 INFO  ProgressMeter - Starting traversal00:21:22.393 INFO  ProgressMeter -        Current Locus  Elapsed Minutes    Variants Processed  Variants/Minute00:21:24.617 INFO  ProgressMeter -      chr11:133635687              0.0                 73805        2009210.500:21:24.617 INFO  ProgressMeter - Traversal complete. Processed 73805 total variants in 0.0 minutes.00:21:24.636 INFO  ApplyVQSR - Shutting down engine[January 28, 2025, 12:21:24 AM EET] org.broadinstitute.hellbender.tools.walkers.vqsr.ApplyVQSR done. Elapsed time: 0.05 minutes.Runtime.totalMemory()=390070272user02@UoA-Intro2Bio24:/mnt/hdd_b/home/user02$ gatk ValidateVariants \    -R /mnt/hdd_b/home/user02/reference/hg38/hg38.fa \    -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gzUsing GATK jar /mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jarRunning:    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -jar /mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar ValidateVariants -R /mnt/hdd_b/home/user02/reference/hg38/hg38.fa -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz00:21:43.785 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar!/com/intel/gkl/native/libgkl_compression.soSLF4J(W): Class path contains multiple SLF4J providers.SLF4J(W): Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@46bb0bdf]SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@561f9d92]SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.SLF4J(I): Actual provider is of type [org.apache.logging.slf4j.SLF4JServiceProvider@46bb0bdf]00:21:43.946 INFO  ValidateVariants - ------------------------------------------------------------00:21:43.949 INFO  ValidateVariants - The Genome Analysis Toolkit (GATK) v4.6.1.000:21:43.949 INFO  ValidateVariants - For support and documentation go to https://software.broadinstitute.org/gatk/00:21:43.950 INFO  ValidateVariants - Executing as user02@UoA-Intro2Bio24 on Linux v6.8.0-49-generic amd6400:21:43.950 INFO  ValidateVariants - Java runtime: OpenJDK 64-Bit Server VM v21.0.5+11-Ubuntu-1ubuntu124.0400:21:43.950 INFO  ValidateVariants - Start Date/Time: January 28, 2025, 12:21:43 AM EET00:21:43.950 INFO  ValidateVariants - ------------------------------------------------------------00:21:43.950 INFO  ValidateVariants - ------------------------------------------------------------00:21:43.951 INFO  ValidateVariants - HTSJDK Version: 4.1.300:21:43.952 INFO  ValidateVariants - Picard Version: 3.3.000:21:43.952 INFO  ValidateVariants - Built for Spark Version: 3.5.000:21:43.955 INFO  ValidateVariants - HTSJDK Defaults.COMPRESSION_LEVEL : 200:21:43.956 INFO  ValidateVariants - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false00:21:43.956 INFO  ValidateVariants - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true00:21:43.956 INFO  ValidateVariants - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false00:21:43.956 INFO  ValidateVariants - Deflater: IntelDeflater00:21:43.956 INFO  ValidateVariants - Inflater: IntelInflater00:21:43.957 INFO  ValidateVariants - GCS max retries/reopens: 2000:21:43.957 INFO  ValidateVariants - Requester pays: disabled00:21:43.957 INFO  ValidateVariants - Initializing engine00:21:44.210 INFO  FeatureManager - Using codec VCFCodec to read file file:///mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz00:21:44.271 INFO  ValidateVariants - Done initializing engine00:21:44.272 WARN  ValidateVariants - IDS validation cannot be done because no DBSNP file was provided00:21:44.272 WARN  ValidateVariants - Other possible validations will still be p[7merformed[27m[7m00:21:44.294 INFO  ProgressMeter - Starting traversal[27m[7m00:21:44.295 INFO  ProgressMeter -        Current Locus  Elapsed Minutes    Vari[27m[7mants Processed  Variants/Minute[27m[7m00:21:47.612 INFO  ProgressMeter -      chr11:133635687              0.1        [27m[7m         73805        1337047.1[27m[7m00:21:47.612 INFO  ProgressMeter - Traversal complete. Processed 73805 total var[27m[7miants in 0.1 minutes.[27m[7m00:21:47.613 INFO  ValidateVariants - Shutting down engine[27m[7m[January 28, 2025, 12:21:47 AM EET] org.broadinstitute.hellbender.tools.walkers.[27m[7mvariantutils.ValidateVariants done. Elapsed time: 0.07 minutes.[27m[7mRuntime.totalMemory()=406847488[27m[7muser02@UoA-Intro2Bio24:/mnt/hdd_b/home/user02$ bcftools stats /mnt/hdd_b/home/us[27m[7mer02/output/chr11_joint_filtered_strict.vcf.gz > filtered_strict_stats.txt[27m[7mgrep "^SN" filtered_strict_stats.txt[27m[7mSN      0       number of samples:      15[27m[7mSN      0       number of records:      73805[27m[7mSN      0       number of no-ALTs:      0[27m[7mSN      0       number of SNPs: 68528[27m[7mSN      0       number of MNPs: 0[27m[7mSN      0       number of indels:       5279[27m[7mSN      0       number of others:       0[27m[7mSN      0       number of multiallelic sites:   64[27m[7mSN      0       number of multiallelic SNP sites[27merformed00:21:44.294 INFO  ProgressMeter - Starting traversal00:21:44.295 INFO  ProgressMeter -        Current Locus  Elapsed Minutes    Variants Processed  Variants/Minute00:21:47.612 INFO  ProgressMeter -      chr11:133635687              0.1                 73805        1337047.100:21:47.612 INFO  ProgressMeter - Traversal complete. Processed 73805 total variants in 0.1 minutes.00:21:47.613 INFO  ValidateVariants - Shutting down engine[January 28, 2025, 12:21:47 AM EET] org.broadinstitute.hellbender.tools.walkers.variantutils.ValidateVariants done. Elapsed time: 0.07 minutes.Runtime.totalMemory()=406847488user02@UoA-Intro2Bio24:/mnt/hdd_b/home/user02$ bcftools stats /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz > filtered_strict_stats.txtgrep "^SN" filtered_strict_stats.txtSN      0       number of samples:      15SN      0       number of records:      73805SN      0       number of no-ALTs:      0SN      0       number of SNPs: 68528SN      0       number of MNPs: 0SN      0       number of indels:       5279SN      0       number of others:       0SN      0       number of multiallelic sites:   64SN      0       number of multiallelic SNP sites[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Agrep "^SN" filtered_strict_stats.txt[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[A]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ bcftools stats /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz > filtered_strict_stats.txt[Agatk ValidateVariants     -R /mnt/hdd_b/home/user02/reference/hg38/hg38.fa     -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz[A[A]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ [C[C[C[C[CApplyVQSR     -R /mnt/hdd_b/home/user02/reference/hg38/hg38.fa     -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict_SNPs.vcf.gz     -O /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz     --recal-file /mnt/hdd_b/home/user02/output/recalibrate_INDEL.recal     --tranches-file /mnt/hdd_b/home/user02/output/recalibrate_INDEL.tranches     -mode INDEL     --truth-sensitivity-filter-level 95.0[A[A[A[C[C[C.vcf.gz     -O /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict_SNPs.vcf.gz     --recal-file /mnt/hdd_b/home/user02/output/recalibrate_SNP.recal     --tranches-file /mnt/hdd_b/home/user02/output/recalibrate_SNP.tranches     -mode[22P SNP     --truth-sensitivity-filter-level 99.0[A[A[A[A[A[C[4Prep "^SN" filtered_stats.txt
+[K
+[K
+[K
+[K
+[K[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[7mbcftools stats /mnt/hdd_b/home/us[27m[7me[27m[7mr02/output/chr11_joint_filtered_strict.vcf.gz | grep TSTV [27m
+[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbcftools stats /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz | grep TSTV
+[A
+[?2004l# [01;31m[KTSTV[m[K, transitions/transversions:
+# [01;31m[KTSTV[m[K	[2]id	[3]ts	[4]tv	[5]ts/tv	[6]ts (1st ALT)	[7]tv (1st ALT)	[8]ts/tv (1st ALT)
+[01;31m[KTSTV[m[K	0	43308	25235	1.72	43296	25220	1.72
+[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ [7mbcftools +fill-tags /mnt/hdd_b/ho[27m[7mm[27m[7me/user02/output/chr11_joint_filtered_strict.vcf.gz -- -t AF | grep -v "^#" | aw[27m[7mk[27m[7m '{print $8}' | cut -d";" -f1 | cut -d"=" -f2 > allele_frequencies.txt [27m
+[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbcftools +fill-tags /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz -- -t AF | grep -v "^#" | awk '{print $8}' | cut -d";" -f1 | cut -d"=" -f2 > allele_frequencies.txt
+[A
+[?2004l[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ [7mbcftools stats /mnt/hdd_b/home/us[27m[7me[27m[7mr02/output/chr11_joint_filtered_strict.vcf.gz | grep "^PSC" [27m
+[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbcftools stats /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz | grep "^PSC"
+[A
+[?2004l[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ [7mbcftools query -f '%CHROM\t%POS\t[27m[7m%[27m[7mINFO/DP\n' /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz > d[27m[7me[27m[7mpth.txt [27m
+[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbcftools query -f '%CHROM\t%POS\t%INFO/DP\n' /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz > depth.txt
+[A
+[?2004l[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ [7mbcftools query -f '%CHROM\t%POS\t[27m[7m%[27m[7mQUAL\n' /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz > qual[27m[7mi[27m[7mty_scores.txt[27m[A[A]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ bcftools query -f '%CHROM\t%POS\t%QUAL\n' /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz > quality_scores.txt
+[?2004l[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ [7mbcftools stats /mnt/hdd_b/home/us[27m[7me[27m[7mr02/output/chr11_joint_filtered_strict.vcf.gz | grep "^ST" | grep "chr" [27m
+[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbcftools stats /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz | grep "^ST" | grep "chr"
+[A
+[?2004l[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ [7mgrep -v "^#" /mnt/hdd_b/home/user[27m[7m0[27m[7m2/output/chr11_joint_filtered_strict.vcf.gz | awk '{if($5 ~ /,/) print $0}' | w[27m[7mc[27m[7m -l [27m
+[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgrep -v "^#" /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz | awk '{if($5 ~ /,/) print $0}' | wc -l
+[A
+[?2004lgrep: /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz: binary file matches
+0
+[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ ls
+[?2004lallele_frequencies.txt  filtered_strict_stats.txt  raw_stats.txt
+[0m[01;34mbbmap[0m                   [01;32mfix_recalibration.sh[0m       [01;32mrealign_data.sh[0m
+[01;31mbbmap.tar.gz[0m            [01;34mGATK_tutorial[0m              [01;34mreference[0m
+[01;32mcreate_sample_map.sh[0m    [01;32mhaplo.sh[0m                   [01;34mrnaseq_workshop[0m
+[01;34mcufflinks.Sp_ds.dir[0m     [01;34mHG00149_plots[0m              sample_map.txt
+[01;34mcufflinks.Sp_hs.dir[0m     HG00149_stats.txt          [01;34msamtools-0.1.18[0m
+[01;34mcufflinks.Sp_log.dir[0m    [01;34migv[0m                        [01;34msnap[0m
+[01;34mcufflinks.Sp_plat.dir[0m   [01;34mIntro2Bio24_25[0m             statistics.txt
+depth.txt               [01;36mmedia[0m                      [01;34mTemplates[0m
+[01;34mDesktop[0m                 [01;34mMusic[0m                      [01;34mtools[0m
+[01;34mDocuments[0m               [01;34moutput[0m                     [01;34mtophat.Sp_ds.dir[0m
+[01;32mdownload_data.sh[0m        [01;34mPictures[0m                   [01;34mtophat.Sp_hs.dir[0m
+download_data.txt       pipeline.txt               [01;34mtophat.Sp_log.dir[0m
+[01;32mdownload_reference.sh[0m   preprocess_data            [01;34mtophat.Sp_plat.dir[0m
+[01;34mDownloads[0m               [01;34mPublic[0m                     [01;34mvenv[0m
+[01;32mduplicates_bqsr.sh[0m      quality_scores.txt         [01;34mVideos[0m
+filtered_stats.txt      [01;34mR[0m
+[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ [7mValueError: could not convert str[27m[7mi[27m[7mng '2,1' to float64 at row 566, column 1.[27m[A]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ ValueError: could not convert stri[1Png '2,1' to float64 at row 566, column 1[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[7mgatk VariantsToTable \[27m
+[7m    -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz \[27m
+[7m    -O indels_table.txt \[27m
+[7m    -F CHROM -F POS -F REF -F ALT -F TYPE[27m
+[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgatk VariantsToTable \
+    -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz \
+    -O indels_table.txt \
+    -F CHROM -F POS -F REF -F ALT -F TYPE
+[A
+[?2004lUsing GATK jar /mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar
+Running:
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -jar /mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar VariantsToTable -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz -O indels_table.txt -F CHROM -F POS -F REF -F ALT -F TYPE
+00:51:54.657 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar!/com/intel/gkl/native/libgkl_compression.so
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@21274afe]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@76a362a4]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [org.apache.logging.slf4j.SLF4JServiceProvider@21274afe]
+00:51:54.869 INFO  VariantsToTable - ------------------------------------------------------------
+00:51:54.872 INFO  VariantsToTable - The Genome Analysis Toolkit (GATK) v4.6.1.0
+00:51:54.873 INFO  VariantsToTable - For support and documentation go to https://software.broadinstitute.org/gatk/
+00:51:54.873 INFO  VariantsToTable - Executing as user02@UoA-Intro2Bio24 on Linux v6.8.0-49-generic amd64
+00:51:54.873 INFO  VariantsToTable - Java runtime: OpenJDK 64-Bit Server VM v21.0.5+11-Ubuntu-1ubuntu124.04
+00:51:54.873 INFO  VariantsToTable - Start Date/Time: January 28, 2025, 12:51:54 AM EET
+00:51:54.874 INFO  VariantsToTable - ------------------------------------------------------------
+00:51:54.874 INFO  VariantsToTable - ------------------------------------------------------------
+00:51:54.875 INFO  VariantsToTable - HTSJDK Version: 4.1.3
+00:51:54.875 INFO  VariantsToTable - Picard Version: 3.3.0
+00:51:54.875 INFO  VariantsToTable - Built for Spark Version: 3.5.0
+00:51:54.883 INFO  VariantsToTable - HTSJDK Defaults.COMPRESSION_LEVEL : 2
+00:51:54.884 INFO  VariantsToTable - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
+00:51:54.884 INFO  VariantsToTable - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
+00:51:54.884 INFO  VariantsToTable - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
+00:51:54.885 INFO  VariantsToTable - Deflater: IntelDeflater
+00:51:54.885 INFO  VariantsToTable - Inflater: IntelInflater
+00:51:54.885 INFO  VariantsToTable - GCS max retries/reopens: 20
+00:51:54.885 INFO  VariantsToTable - Requester pays: disabled
+00:51:54.886 INFO  VariantsToTable - Initializing engine
+00:51:55.196 INFO  FeatureManager - Using codec VCFCodec to read file file:///mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz
+00:51:55.269 INFO  VariantsToTable - Done initializing engine
+00:51:55.272 WARN  VariantsToTable - Allele-specific fields will only be split if splitting multi-allelic variants is specified (`--split-multi-allelic` or `-SMA`
+00:51:55.272 INFO  ProgressMeter - Starting traversal
+00:51:55.274 INFO  ProgressMeter -        Current Locus  Elapsed Minutes    Variants Processed  Variants/Minute
+00:51:56.494 INFO  ProgressMeter -      chr11:133635687              0.0                 73805        3641694.1
+00:51:56.495 INFO  ProgressMeter - Traversal complete. Processed 73805 total variants in 0.0 minutes.
+00:51:56.495 INFO  VariantsToTable - Shutting down engine
+[January 28, 2025, 12:51:56 AM EET] org.broadinstitute.hellbender.tools.walkers.variantutils.VariantsToTable done. Elapsed time: 0.03 minutes.
+Runtime.totalMemory()=322961408
+[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ user02@UoA-Intro2Bio24:/mnt/hdd_b/home/user02$ gatk VariantsToTable \ 
+    -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz \
+    -O indels_table.txt \
+    -F CHROM -F POS -F REF -F ALT -F TYPE
+Using GATK jar /mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar 
+Running:
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -jar /mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar VariantsToTable -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz -O indels_table.txt -F CHROM -F POS -F REF -F ALT -F TYPE 
+00:51:54.657 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar!/com/intel/gkl/native/libgkl_compression.so 
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@21274afe] 
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@76a362a4] 
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation. 
+SLF4J(I): Actual provider is of type [org.apache.logging.slf4j.SLF4JServiceProvider@21274afe] 00:51:54.869 INFO  VariantsToTable - ------------------------------------------------------------00:51:54.872 INFO  VariantsToTable - The Genome Analysis Toolkit (GATK) v4.6.1.000:51:54.873 INFO  VariantsToTable - For support and documentation go to https://software.broadinstitute.org/gatk/00:51:54.873 INFO  VariantsToTable - Executing as user02@UoA-Intro2Bio24 on Linux v6.8.0-49-generic amd6400:51:54.873 INFO  VariantsToTable - Java runtime: OpenJDK 64-Bit Server VM v21.0.5+11-Ubuntu-1ubuntu124.0400:51:54.873 INFO  VariantsToTable - Start Date/Time: January 28, 2025, 12:51:54 AM EET00:51:54.874 INFO  VariantsToTable - ------------------------------------------------------------00:51:54.874 INFO  VariantsToTable - ------------------------------------------------------------00:51:54.875 INFO  VariantsToTable - HTSJDK Version: 4.1.300:51:54.875 INFO  VariantsToTable - Picard Version: 3.3.000:51:54.875 INFO  VariantsToTable - Built for Spark Version: 3.5.000:51:54.883 INFO  VariantsToTable - HTSJDK Defaults.COMPRESSION_LEVEL : 200:51:54.884 INFO  VariantsToTable - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false00:51:54.884 INFO  VariantsToTable - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true00:51:54.884 INFO  VariantsToTable - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false[7m00:51:54.885 INFO  VariantsToTable - Deflater: IntelDeflater[27m[7m00:51:54.885 INFO  VariantsToTable - Inflater: IntelInflater[27m[7m00:51:54.885 INFO  VariantsToTable - GCS max retries/reopens: 20[27m[7m00:51:54.885 INFO  VariantsToTable - Requester pays: disabled[27m[7m00:51:54.886 INFO  VariantsToTable - Initializing engine[27m[7m00:51:55.196 INFO  FeatureManager - Using codec VCFCodec to read file file:///mn[27m[7mt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz[27m[7m00:51:55.269 INFO  VariantsToTable - Done initializing engine[27m[7m00:51:55.272 WARN  VariantsToTable - Allele-specific fields will only be split i[27m[7mf splitting multi-allelic variants is specified (`--split-multi-allelic` or `-SM[27m[7mA`[27m[7m00:51:55.272 INFO  ProgressMeter - Starting traversal[27m[7m00:51:55.274 INFO  ProgressMeter -        Current Locus  Elapsed Minutes    Vari[27m[7mants Processed  Variants/Minute[27m[7m00:51:56.494 INFO  ProgressMeter -      chr11:133635687              0.0        [27m[7m         73805        3641694.1[27m[7m00:51:56.495 INFO  ProgressMeter - Traversal complete. Processed 73805 total var[27m[7miants in 0.0 minutes.[27m[7m00:51:56.495 INFO  VariantsToTable - Shutting down engine[27m[7m[January 28, 2025, 12:51:56 AM EET] org.broadinstitute.hellbender.tools.walkers.[27m[7mvariantutils.VariantsToTable done. Elapsed time: 0.03 minutes.[27m[7mRuntime.totalMemory()=322961408[27m[7muser02@UoA-Intro2Bio24:/mnt/hdd_b/home/user02$ [27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgatk VariantsToTable     -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz     -O indels_table.t[28Pxt     -F CHROM -F POS -F REF -F ALT -F TYPE
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[A]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ user02@UoA-Intro2Bio24:/mnt/hdd_b/[44Phome/user02$ gatk VariantsToTable \
+    -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz \
+    -O indels_table.txt \
+    -F CHROM -F POS -F REF -F ALT -F TYPE
+Using GATK jar /mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar 
+Running:
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -jar /mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar VariantsToTable -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz -O indels_table.txt -F CHROM -F POS -F REF -F ALT -F TYPE 
+00:51:54.657 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/mnt/hdd_b/home/user02/tools/gatk-4.6.1.0/gatk-package-4.6.1.0-local.jar!/com/intel/gkl/native/libgkl_compression.so 
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@21274afe] 
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@76a362a4] 
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation. 
+SLF4J(I): Actual provider is of type [org.apache.logging.slf4j.SLF4JServiceProvider@21274afe] 00:51:54.869 INFO  VariantsToTable - ------------------------------------------------------------00:51:54.872 INFO  VariantsToTable - The Genome Analysis Toolkit (GATK) v4.6.1.000:51:54.873 INFO  VariantsToTable - For support and documentation go to https://software.broadinstitute.org/gatk/00:51:54.873 INFO  VariantsToTable - Executing as user02@UoA-Intro2Bio24 on Linux v6.8.0-49-generic amd6400:51:54.873 INFO  VariantsToTable - Java runtime: OpenJDK 64-Bit Server VM v21.0.5+11-Ubuntu-1ubuntu124.0400:51:54.873 INFO  VariantsToTable - Start Date/Time: January 28, 2025, 12:51:54 AM EET00:51:54.874 INFO  VariantsToTable - ------------------------------------------------------------00:51:54.874 INFO  VariantsToTable - ------------------------------------------------------------00:51:54.875 INFO  VariantsToTable - HTSJDK Version: 4.1.300:51:54.875 INFO  VariantsToTable - Picard Version: 3.3.000:51:54.875 INFO  VariantsToTable - Built for Spark Version: 3.5.000:51:54.883 INFO  VariantsToTable - HTSJDK Defaults.COMPRESSION_LEVEL : 200:51:54.884 INFO  VariantsToTable - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false00:51:54.884 INFO  VariantsToTable - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true00:51:54.884 INFO  VariantsToTable - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false00:51:54.885 INFO  VariantsToTable - Deflater: IntelDeflater00:51:54.885 INFO  VariantsToTable - Inflater: IntelInflater00:51:54.885 INFO  VariantsToTable - GCS max retries/reopens: 2000:51:54.885 INFO  VariantsToTable - Requester pays: disabled00:51:54.886 INFO  VariantsToTable - Initializing engine00:51:55.196 INFO  FeatureManager - Using codec VCFCodec to read file file:///mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz00:51:55.269 INFO  VariantsToTable - Done initializing engine00:51:55.272 WARN  VariantsToTable - Allele-specific fields will only be split if splitting multi-allelic variants is specified (`--split-multi-allelic` or `-SMA`00:51:55.272 INFO  ProgressMeter - Starting traversal00:51:55.274 INFO  ProgressMeter -        Current Locus  Elapsed Minutes    Variants Processed  Variants/Minute00:51:56.494 INFO  ProgressMeter -      chr11:133635687              0.0                 73805        3641694.100:51:56.495 INFO  ProgressMeter - Traversal complete. Processed 73805 total variants in 0.0 minutes.00:51:56.495 INFO  VariantsToTable - Shutting down engine[January 28, 2025, 12:51:56 AM EET] org.broadinstitute.hellbender.tools.walkers.variantutils.VariantsToTable done. Elapsed time: 0.03 minutes.Runtime.totalMemory()=322961408user02@UoA-Intro2Bio24:/mnt/hdd_b/home/user02$ [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgatk VariantsToTable     -V /mnt/hdd_b/home/user02/output/chr11_joint_filtered_strict.vcf.gz     -O indels_table.t[28Pxt     -F CHROM -F POS -F REF -F ALT -F TYPE
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[A]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ ls[K
+[K
+[K[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[7mawk '{if ($5 == "INDEL" && length[27m[7m([27m[7m$4) > length($3)) print $0}' indels_table.txt | wc -l  # Insertions [27m
+[7mawk '{if ($5 == "INDEL" && length($3) > length($4)) print $0}' indels_table.txt [27m[7m|[27m[7m wc -l  # Deletions [27m
+[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cawk '{if ($5 == "INDEL" && length($4) > length($3)) print $0}' indels_table.txt | wc -l  # Insertions
+awk '{if ($5 == "INDEL" && length($3) > length($4)) print $0}' indels_table.txt | wc -l  # Deletions
+[A
+[?2004l2139
+2840
+[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ [7mawk '{if ($5 == "INDEL") print le[27m[7mn[27m[7mgth($4)-length($3)}' indels_table.txt | awk '{sum+=($1>=0?$1:-$1)} END {print "[27m[7mA[27m[7mverage Indel Length:", sum/NR}'[27m[A[A]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ awk '{if ($5 == "INDEL") print length($4)-length($3)}' indels_table.txt | awk '{sum+=($1>=0?$1:-$1)} END {print "Average Indel Length:", sum/NR}'
+[?2004lAverage Indel Length: 2.16616
+[?2004h]0;user02@UoA-Intro2Bio24: /mnt/hdd_b/home/user02[01;32muser02@UoA-Intro2Bio24[00m:[01;34m/mnt/hdd_b/home/user02[00m$ [7m40[27m
+[7muser02@UoA-Intro2Bio24:/mnt/hdd_b/home/user02$ awk '{if ($5 == "INDEL") print le[27m[7mn[27m[7mgth($4)-length($3)}' indels_table.txt | awk '{sum+=($1>=0?$1:-$1)} END {print "[27m[7mA[27m[7mverage Indel Length:", sum/NR}' [27m
+[7mAverage Indel Length: 2.16616[27m
+[7muser02@UoA-Intro2Bio24:/mnt/hdd_b/home/user02$ [27m
+[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C40
+user02@UoA-Intro2Bio24:/mnt/hdd_b/home/user02$ awk '{if ($5 == "INDEL") print length($4)-length($3)}' indels_table.txt | awk '{sum+=($1>=0?$1:-$1)} END {print "Average Indel Length:", sum/NR}'
+Average Indel Length: 2.16616
+user02@UoA-Intro2Bio24:/mnt/hdd_b/home/user02$ 
+e[Kexit
+[?2004l\40: command not found
+bash: user02@UoA-Intro2Bio24:/mnt/hdd_b/home/user02$: No such file or directory
+Average Indel Length: -nan
+Command 'Average' not found, did you mean:
+  command 'average' from deb argyll (3.1.0+repack-1)
+Try: apt install <deb name>
+bash: user02@UoA-Intro2Bio24:/mnt/hdd_b/home/user02$: No such file or directory
+exit
+
+Script done on 2025-01-28 01:16:58+02:00 [COMMAND_EXIT_CODE="127"]
